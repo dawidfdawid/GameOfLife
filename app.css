@@ -1,0 +1,48 @@
+.no {
+    background-color: white;
+}
+
+.yes {
+    background-color: orange;
+}
+
+body {
+    background: rgb(#EAE7DC);
+}
+
+td {
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgb(175, 176, 180);
+    background-color: white;
+    background-color: transparent;
+    transition: background-color .1s linear;
+    -moz-transition: background-color .1s linear;  
+    -webkit-transition: background-color .1s linear; 
+    -ms-transition: background-color .1s linear; 
+}
+
+td:hover {
+    background-color:rgb(156, 156, 156);
+}
+
+.yes:hover {
+    background-color: rgb(141, 92, 0);
+}
+
+table {
+    color:rgb(155, 39, 39);
+    border: 2px solid rgb(94, 129, 91);
+    border-radius: 10px;
+    border-collapse: collapse;
+    height: auto;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+p {
+    color:rgb(81, 81, 122);
+}
+
