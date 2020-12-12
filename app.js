@@ -30,6 +30,9 @@ stop.addEventListener("click", e => {
     evolving = 0;
 })
 
+let slider = document.getElementById("myRange");
+slider.addEventListener("change", sliderEvolve);
+
 window.addEventListener('mouseup', e => {
     if (drawing === true) {
       drawing = false;
@@ -88,6 +91,18 @@ function liveNeighbors(i,j,grid){
     return total;
 }
 
+function sliderEvolve(){
+    clearInterval(evolving);
+    console.log(evolving)
+    if (!evolving){
+        {}
+    }
+    else{
+    evolving = 0;
+    evolving = setInterval(evolveBoard,slider.value);
+    }
+    
+}
 
 function evolveBoard(){
     let grid = document.getElementById('grid');
@@ -139,7 +154,7 @@ function evolve(){
     }
     else{
         evolving = 0;
-    evolving = setInterval(evolveBoard,300);
+        evolving = setInterval(evolveBoard,slider.value);
     }
 }
 
