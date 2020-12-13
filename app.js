@@ -1,4 +1,5 @@
 let drawing = false;
+let arr = [[0,0,0,1,0,0,0,0,0],[0,0,1,1,0,0,0,0,0]];
 
 function initGrid(){
     let grid = document.getElementById("grid");
@@ -95,7 +96,7 @@ function liveNeighbors(i,j,grid){
 function sliderEvolve(){
     speed.innerText = slider.value;
     clearInterval(evolving);
-    console.log(evolving)
+    //console.log(evolving)
     if (!evolving){
         {}
     }
@@ -108,7 +109,7 @@ function sliderEvolve(){
 
 function evolveBoard(){
     let grid = document.getElementById('grid');
-    let arr = [[0,0,0,1,0,0,0,0,0],[0,0,1,1,0,0,0,0,0]];
+    //let arr = [[0,0,0,1,0,0,0,0,0],[0,0,1,1,0,0,0,0,0]];
     let i;
     let j;
     let gridclone = grid.cloneNode(true);
@@ -157,6 +158,29 @@ function evolve(){
     else{
         evolving = 0;
         evolving = setInterval(evolveBoard,slider.value);
+    }
+}
+
+let darr = document.getElementById("rule0");
+darr.addEventListener('change',changeRuleArray);
+let aarr = document.getElementById("rule1");
+aarr.addEventListener('change',changeRuleArray);
+
+function changeRuleArray(){
+    let i;
+    for (i=0;i<9;i++){
+        if (darr[i].checked){
+            arr[0][i] = 1;
+        }
+        else {
+            arr[0][i] = 0;
+        }
+        if (aarr[i].checked){
+            arr[1][i] = 1;
+        }
+        else {
+            arr[1][i] = 0;
+        }
     }
 }
 

@@ -17,13 +17,62 @@
   <div class="slidecontainer">
     <p id="slidetitle">speed of evolution</p>
     <p> fastest => slowest</p>
-    <input type="range" min="90" max="1500" value="500" class="slider" id="myRange">
+    <input type="range" min="1" max="1500" value="500" class="slider" id="myRange">
     <p>speed: <span id="speed">500</span> milliseconds per evolution</p>
   </div>
   <div id = "buttoncontainer">
   <button id="startb">click me to start</button>
   <button id="clear">clear</button>
   <button id="stop">STOP ME</button>
+  </div>
+  <br>
+  <p></p>
+  <div id="rules">
+    <p>How many live neighbors are needed to live?</p>
+    <p>Dead  cell:
+    <form id="rule0">
+      <label for="00">0:</label>
+      <input type="checkbox" id="deadarr" name="00">
+      <label for="01">1:</label>
+      <input type="checkbox" id="deadarr" name="01">
+      <label for="02">2:</label>
+      <input type="checkbox" id="deadarr" name="02">
+      <label for="03">3:</label>
+      <input type="checkbox" id="deadarr" name="03" checked="checked">
+      <label for="04">4:</label>
+      <input type="checkbox" id="deadarr" name="04">
+      <label for="05">5:</label>
+      <input type="checkbox" id="deadarr" name="05">
+      <label for="06">6:</label>
+      <input type="checkbox" id="deadarr" name="06">
+      <label for="07">7:</label>
+      <input type="checkbox" id="deadarr" name="07">
+      <label for="08">8:</label>
+      <input type="checkbox" id="deadarr" name="08">
+    </form>
+    </p>
+    <p>Alive cell:
+      <form id="rule1">
+        <label for="10">0:</label>
+        <input type="checkbox" id="alivearr" name="10">
+        <label for="11">1:</label>
+        <input type="checkbox" id="alivearr" name="11">
+        <label for="12">2:</label>
+        <input type="checkbox" id="alivearr" name="12" checked="checked">
+        <label for="13">3:</label>
+        <input type="checkbox" id="alivearr" name="13" checked="checked">
+        <label for="14">4:</label>
+        <input type="checkbox" id="alivearr" name="14">
+        <label for="15">5:</label>
+        <input type="checkbox" id="alivearr" name="15">
+        <label for="16">6:</label>
+        <input type="checkbox" id="alivearr" name="16">
+        <label for="17">7:</label>
+        <input type="checkbox" id="alivearr" name="17">
+        <label for="18">8:</label>
+        <input type="checkbox" id="alivearr" name="18">
+      </form>
+      </p>
   </div>
   <table id="grid"></table>
   <script src="app.js"></script>
