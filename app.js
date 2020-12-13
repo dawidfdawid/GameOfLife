@@ -58,6 +58,7 @@ function cellChange2(){
         }
     }
 }
+let speed = document.getElementById("speed");
 
 function liveNeighbors(i,j,grid){
     //let grid = document.getElementById('grid')
@@ -92,6 +93,7 @@ function liveNeighbors(i,j,grid){
 }
 
 function sliderEvolve(){
+    speed.innerText = slider.value;
     clearInterval(evolving);
     console.log(evolving)
     if (!evolving){
