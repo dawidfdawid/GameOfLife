@@ -11,16 +11,16 @@
     #container {
         flex-direction: row;
     }
-    .yes{
-        width: min(20px,2.5vw);
-        height: min(20px,2.5vw);
+    /*.yes{
+        width: min(20px,2.5vh);
+        height: min(20px,2.5vh);
         table-layout: fixed;
     }
     .no{
-        width: min(20px,2.5vw);
-        height: min(20px,2.5vw);
+        width: min(20px,2.5vh);
+        height: min(20px,2.5vh);
         table-layout: fixed;
-    }
+    }*/
 }
 
 
@@ -30,6 +30,11 @@
     width: auto;
 }
 
+#container .alert{
+    width: min(400px, 70%);
+    justify-content: center;
+    margin: auto;
+}
 
 .no {
     background-color: white;
@@ -41,14 +46,19 @@
 }
 
 #info {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
 }
 
 body {
     background: rgb(#EAE7DC);
 }
 
+label {
+    position: static;
+    bottom: 100%;
+}
 #rules {
     margin-right: auto;
     margin-left: auto;
@@ -61,8 +71,6 @@ h2 {
 
 
 td {
-    width: min(20px,2.5vw);
-    height: min(20px,2.5vw);
     margin: 0;
     table-layout: fixed;
     padding: 0;
@@ -80,7 +88,9 @@ td {
     -webkit-transition: background-color .1s linear; 
     -ms-transition: background-color .1s linear; 
 }
-
+#boardSize{
+    margin-bottom:10px;
+}
 td:hover {
     background-color:rgb(156, 156, 156);
 }
@@ -92,7 +102,7 @@ td:hover {
 table {
     margin: 0;
     /*position: relative;*/
-    /*table-layout: inherit;*/
+    table-layout: fixed;
     top: -300px;
     color:rgb(155, 39, 39);
     border: 2px solid rgb(94, 129, 91);
@@ -100,27 +110,59 @@ table {
     border-collapse: collapse;
     /*height: 2000px;
     width: 2000px;*/
+    max-width: 100%;
+    max-Height: 100%;
     margin-left: auto;
     margin-right: auto;
 }
-@media (min-width: 1200px) and (orientation:landscape) {
-    .yes{
-        width: 2.5vh;
-        height: 2.5vh;
-        table-layout: fixed;
-    }
-    .no{
-        width: 2.5vh;
-        height: 2.5vh;
-        table-layout: fixed;
-    }
+
+
+label {
+    
+    color:rgb(81, 81, 122);
 }
 
 #gameboard{
     flex-grow:4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    table-layout: fixed;
 }
 
 p {
     color:rgb(81, 81, 122);
 }
 
+button {
+    margin: 5px;
+}
+.alert {
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border-style: groove;
+    width:auto;
+    /*display: none;*/
+  }
+  
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.closebtn:hover {
+    color: black;
+  }
+
+#inputAlert {
+    display: none;
+    width: 100px;
+}

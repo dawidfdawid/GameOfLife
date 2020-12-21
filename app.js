@@ -4,20 +4,81 @@ let arr = [[0,0,0,1,0,0,0,0,0],[0,0,1,1,0,0,0,0,0]];
 function initGrid(){
     let grid = document.getElementById("grid");
     let i;
+    //let newGrid = document.createElement("table");
+    
     //let drawing;
-    for (i=0; i<25; i++){
+    let rows = document.getElementById("row").value;
+    let cols = document.getElementById("col").value;
+    let alertb = document.getElementById("inputAlert");
+    if (rows>200 || rows<1){
+        console.log("hi");
+        alertb.style.display = "block";
+        return;
+    }
+    else if (cols>200 || cols<1){
+        console.log("hi2");
+        alertb.style.display = "block";
+        return;
+    }
+    while(grid.hasChildNodes())
+    {
+       grid.removeChild(grid.firstChild);
+    }
+
+    for (i=0; i<rows; i++){
         let row = grid.insertRow(i);
         let j;
-        for (j=0; j<40;j++){
+        for (j=0; j<cols;j++){
             let cell = row.insertCell(j);
             cell.classList.add("no");
             cell.addEventListener("mousedown", cellChange);
             cell.addEventListener("mouseover", cellChange2);
         }
     }
+    
+    let gridH = document.getElementById("gameboard").offsetHeight;
+    let gridW = document.getElementById("gameboard").offsetWidth;
+    cellWidth = gridW/cols;
+    cellHeight = gridH/rows;
+    if (cellWidth > cellHeight) {
+        //console.log("I happen cellw>cellh");
+        let style = document.getElementById("tdCSS");
+        /*console.log(cellHeight);
+        console.log(gridH);
+        console.log(rows);*/
+        style.innerHTML = `
+        td {
+            width: min(20px,${cellHeight}px);
+            height: min(20px,${cellHeight}px);
+        }
+        `;
+    }
+
+    else{
+        //console.log("I happen cellh>cellw");
+        let style = document.getElementById("tdCSS");
+        /*console.log(cellWidth);
+        console.log(gridW);
+        console.log(cols);*/
+        style.innerHTML = `
+        td {
+            width: min(20px,${cellWidth}px);
+            height: min(20px,${cellWidth}px);
+        }
+        `;
+        //console.log(document.getElementById("tdCSS").innerHTML);
+
+        
+    }
+    //grid = newGrid;
     return;
 }
+
+
 let evolving;
+
+let Bs = document.getElementById("changeBoard");
+Bs.addEventListener("click", initGrid);
 
 let butt = document.getElementById("startb");
 butt.addEventListener("click", evolve);
@@ -132,6 +193,7 @@ function evolveBoard(){
             }
         }
     }
+    //console.log("hi");
     if (gridclone.isEqualNode(grid)){
         clearInterval(evolving);
         evolving = 0;
